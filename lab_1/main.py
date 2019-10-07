@@ -28,16 +28,16 @@ def filter_stop_words(frequencies: dict, stop_words: tuple):
         return {}
     if type(frequencies) is not dict:
         return {}
-    for key, value in frequencies.items():
-        if key not in stop_words and isinstance(key, str):
+    for key, value in frequencies.items():  # возвращает список пар кортежей
+        if key not in stop_words and isinstance(key, str):  # проверка принадлежности к str
             my_dict[key] = value
     return my_dict
 
 def get_top_n(my_dict: dict, top_n: int):
     list_freq=[]
-    if my_dict is {} or top_n<=0:
+    if my_dict is None or top_n<=0:
         return()
     else:
-        list_freq=sorted(my_dict, key=my_dict.get, reverse=True)
+        list_freq=sorted(my_dict, key=my_dict.get, reverse=True)  # get возвращает значение для данного ключа,reverse-опциональный параметр
     return tuple(list_freq[:top_n])
     print(get_top_n(my_dict, top_n))
