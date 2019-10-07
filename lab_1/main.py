@@ -1,8 +1,10 @@
 def calculate_frequences(text: str) -> dict:
-    delite = ['.', ',', '-', '_', '', '/', '—', '&', '^', '~', '%', '$', '?', '!', '*', '@', '\n']
+    delite = ['.', ',', '-', '_', '', '/', '—', '&', '^', '~', '%', '$', '?', '!', '*', '@', '"', ':', '\n']
     new_txt = {}
     if type(text)!=str:
         return new_txt
+    if text is None:
+        print('Ошибка')
     filter_txt = ''
     for letter in text:
         if not letter.isdigit() and letter not in delite:
