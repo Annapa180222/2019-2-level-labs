@@ -1,5 +1,5 @@
 def calculate_frequences(text: str) -> dict:
-    delite = ['.', ',', '-', '_', '', '/', '—', '&', '^', '~', '%', '$', '?', '!', '*', '@', '"', ':', '\n']
+    delite = ['.', ',', '-', '_', '', '/', '—', '&', '^', '~', '%', '$', '?', '!', '*', '@', '"', ':', '\n','"',':']
     new_txt = {}
     if type(text)!=str:
         return new_txt
@@ -17,8 +17,6 @@ def calculate_frequences(text: str) -> dict:
         else:
             new_txt[word] = 1
     return new_txt
-
-    print(calculate_frequences(text))
 
 
 def filter_stop_words(frequencies: dict, stop_words: tuple):
