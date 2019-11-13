@@ -11,9 +11,11 @@ def generate_edit_matrix(num_rows: int, num_cols: int) -> list:
 
 
 def initialize_edit_matrix(edit_matrix: tuple, add_weight: int, remove_weight: int) -> list:
+    if edit_matrix == ():
+        return []
     if type(edit_matrix) == tuple:
         new_m = list(edit_matrix)
-    if len(new_m)==0:
+    if len(new_m)==0 or edit_matrix == ()::
          return new_m
     if type(add_weight) == int and type(remove_weight) == int:
         for i in range(1,len(new_m)):
@@ -42,9 +44,6 @@ def fill_edit_matrix(edit_matrix: tuple,
     new_m = list(edit_matrix)
     if original_word == None or target_word == None:
         return new_m
-    if original_word == '' or target_word == '':
-        return new_m
-    
     if type(edit_matrix) == tuple and type(add_weight) == int and type(remove_weight) == int and type(substitute_weight) == int:
         for i in range(1, len(new_m)):
             for j in range(1, len(new_m[0])):
