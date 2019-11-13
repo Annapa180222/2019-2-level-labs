@@ -42,6 +42,8 @@ def fill_edit_matrix(edit_matrix: tuple,
     new_m = list(edit_matrix)
     if original_word == None or target_word == None:
         return new_m
+    if original_word == '' or target_word == '':
+        return new_m
     if type(edit_matrix) == tuple and type(add_weight) == int and type(remove_weight) == int and type(substitute_weight) == int:
         for i in range(1, len(new_m)):
             for j in range(1, len(new_m[0])):
@@ -83,7 +85,7 @@ def save_to_csv(edit_matrix: tuple, path_to_file: str) -> None:
             save_file.write(row)
         save_file.write('\n')
     save_file.close(row)
-
+save_to_csv(...)
 
 def load_from_csv(path_to_file: str) -> list:
     new_file = open(path_to_file)
