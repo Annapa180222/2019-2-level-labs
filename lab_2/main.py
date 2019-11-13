@@ -44,6 +44,7 @@ def fill_edit_matrix(edit_matrix: tuple,
         return new_m
     if original_word == '' or target_word == '':
         return new_m
+    
     if type(edit_matrix) == tuple and type(add_weight) == int and type(remove_weight) == int and type(substitute_weight) == int:
         for i in range(1, len(new_m)):
             for j in range(1, len(new_m[0])):
