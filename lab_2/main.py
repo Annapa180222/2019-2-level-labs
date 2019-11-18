@@ -11,14 +11,14 @@ def generate_edit_matrix(num_rows: int, num_cols: int) -> list:
 
 
 def initialize_edit_matrix(edit_matrix: tuple, add_weight: int, remove_weight: int) -> list:
-    if edit_matrix == ():
-        return []
     if type(edit_matrix) == tuple:
         new_m = list(edit_matrix)
-    if len(new_m)==0 or edit_matrix == ()::
+    if [] in edit_matrix:
+        return list(new_m)
+    if len(new_m) == 0 or edit_matrix == ()::
          return new_m
     if type(add_weight) == int and type(remove_weight) == int:
-        for i in range(1,len(new_m)):
+        for i in range(1, len(new_m)):
             new_m[i][0] = new_m[i - 1][0] + remove_weight
             new_m[0][0]=0
             i = i+1
