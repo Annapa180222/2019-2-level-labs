@@ -37,4 +37,4 @@ if __name__ == '__main__':
     tf_idf.calculate_idf()
     tf_idf.calculate()
     print(tf_idf.report_on('good', 0))
-    print(tf_idf.report_on('and', 1))
+    print(tf_idf.report_on('and', 1))r
